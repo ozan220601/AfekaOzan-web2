@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מילון מונחים - מודל CNN</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* עיצוב ספציפי לטבלת המונחים בדף הבית */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: right;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .term-en {
+            font-weight: bold;
+            color: #2980b9;
+            direction: ltr;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>מערכת אימון וזיהוי צורות בזמן אמת (CNN)</h1>
+        <nav>
+            <a href="index.html" class="active">לדף הבית (מילון מונחים)</a> | 
+            <a href="model.html">לדף המודל והאימון</a>
+        </nav>
+    </header>
+
+    <main class="container" style="grid-template-columns: 1fr;">
+        <section>
+            <h2>מילון מונחים מקיף - מודל AI ורשתות נוירונים</h2>
+            <p>מתחת הנה 40 מונחים מרכזיים הקשורים לארכיטקטורת המודל, תהליך האימון, והקוד שבו השתמשנו במערכת.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>מס'</th>
+                        <th>מונח (אנגלית)</th>
+                        <th>מונח (עברית)</th>
+                        <th>הגדרה והקשר לקוד שלנו</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td><span class="term-en">Artificial Intelligence (AI)</span></td><td>בינה מלאכותית</td><td>תחום רחב המאפשר למכונות לבצע משימות הדורשות אינטליגנציה אנושית.</td></tr>
+                    <tr><td>2</td><td><span class="term-en">Machine Learning (ML)</span></td><td>למידת מכונה</td><td>תת-תחום ב-AI המאפשר למערכת ללמוד מנתונים במקום להיות מתוכנתת מראש.</td></tr>
+                    <tr><td>3</td><td><span class="term-en">Deep Learning</span></td><td>למידה עמוקה</td><td>תת-תחום ב-ML המשתמש ברשתות עצביות מרובות שכבות לפתרון בעיות מורכבות.</td></tr>
+                    <tr><td>4</td><td><span class="term-en">Neural Network</span></td><td>רשת עצבית</td><td>מודל מתמטי בהשראת המוח האנושי, המורכב משכבות של נוירונים מלאכותיים.</td></tr>
+                    <tr><td>5</td><td><span class="term-en">Neuron / Node</span></td><td>נוירון / צומת</td><td>יחידת העיבוד הבסיסית ברשת[cite: 6]. אצלנו בשכבה המחוברת יש 3 נוירונים לזיהוי 3 הצורות.</td></tr>
+                    <tr><td>6</td><td><span class="term-en">Weights</span></td><td>משקלים</td><td>המספרים הקובעים את חוזק הקשר בין נוירונים[cite: 7]. המודל לומד ע"י עדכון משקלים אלו.</td></tr>
+                    <tr><td>7</td><td><span class="term-en">Bias</span></td><td>הטיה</td><td>ערך קבוע הנוסף לחישוב הנוירון (לצד המשקלים) ומאפשר גמישות רבה יותר בהתאמת המודל.</td></tr>
+                    <tr><td>8</td><td><span class="term-en">Hyperparameters</span></td><td>פרמטרים-על</td><td>הגדרות הנקבעות לפני תחילת האימון (כמו קצב למידה, גודל פילטר ומספר שכבות).</td></tr>
+                    
+                    <tr><td>9</td><td><span class="term-en">CNN (Convolutional Neural Network)</span></td><td>רשת קונבולוציה</td><td>סוג של רשת עצבית המותאמת במיוחד לעיבוד וזיהוי תמונות[cite: 6].</td></tr>
+                    <tr><td>10</td><td><span class="term-en">Convolution</span></td><td>קונבולוציה</td><td>פעולה מתמטית המחליקה פילטר על גבי הקלט כדי לחלץ מאפיינים מרחביים[cite: 6].</td></tr>
+                    <tr><td>11</td><td><span class="term-en">Filter / Kernel</span></td><td>פילטר / ליבה</td><td>מטריצה קטנה (למשל 3x3) העוברת על התמונה ומזהה תכונות כמו קווים וקצוות[cite: 6].</td></tr>
+                    <tr><td>12</td><td><span class="term-en">Feature Map</span></td><td>מפת תכונות</td><td>הפלט הנוצר לאחר העברת פילטר על תמונת הקלט[cite: 6].</td></tr>
+                    <tr><td>13</td><td><span class="term-en">Pooling</span></td><td>צמצום</td><td>הקטנת הממדים של מפת התכונות כדי להקטין את כמות החישובים[cite: 6].</td></tr>
+                    <tr><td>14</td><td><span class="term-en">Max Pooling</span></td><td>צמצום מקסימום</td><td>שיטת Pooling הלוקחת את הערך הגדול ביותר (הפיקסל החזק ביותר) מכל אזור דגימה.</td></tr>
+                    <tr><td>15</td><td><span class="term-en">Stride</span></td><td>צעד</td><td>מספר הפיקסלים שבהם הפילטר או חלון ה-Pooling זזים בכל פעם על גבי הקלט.</td></tr>
+                    <tr><td>16</td><td><span class="term-en">Padding</span></td><td>ריפוד</td><td>הוספת אפסים לשולי התמונה כדי לשמור על גודלה המקורי לאחר קונבולוציה.</td></tr>
+                    <tr><td>17</td><td><span class="term-en">Flattening</span></td><td>השטחה</td><td>המרת מפות התכונות הדו-ממדיות למערך חד-ממדי לפני הזנתן לשכבה מחוברת.</td></tr>
+                    <tr><td>18</td><td><span class="term-en">Fully Connected / Dense Layer</span></td><td>שכבה מחוברת במלואה</td><td>שכבה שבה כל נוירון מחובר לכל הנוירונים מהשכבה הקודמת, משמשת לקבלת החלטה סופית.</td></tr>
+                    
+                    <tr><td>19</td><td><span class="term-en">Activation Function</span></td><td>פונקציית הפעלה</td><td>נוסחה מתמטית הקובעת אם נוירון "יידלק" או לא, ומכניסה אי-לינאריות למודל.</td></tr>
+                    <tr><td>20</td><td><span class="term-en">ReLU (Rectified Linear Unit)</span></td><td>רילו (יחידה ליניארית מתוקנת)</td><td>פונקציית הפעלה שמאפסת ערכים שליליים ומשאירה ערכים חיוביים כמות שהם[cite: 6].</td></tr>
+                    <tr><td>21</td><td><span class="term-en">Softmax</span></td><td>סופטמקס</td><td>פונקציה בסוף הרשת הממירה ניקודים גולמיים להסתברויות המסתכמות ל-100%.</td></tr>
+                    <tr><td>22</td><td><span class="term-en">Loss Function</span></td><td>פונקציית שגיאה/מחיר</td><td>מודדת את הפער בין הניבוי של המודל לבין התשובה הנכונה[cite: 7].</td></tr>
+                    <tr><td>23</td><td><span class="term-en">Cross-Entropy</span></td><td>אנטרופיה צולבת</td><td>נוסחת שגיאה נפוצה לבעיות סיווג רב-מחלקתיות, שבה השתמשנו בקוד שלנו.</td></tr>
+                    
+                    <tr><td>24</td><td><span class="term-en">Forward Pass</span></td><td>מעבר קדימה</td><td>זרימת הנתונים מתחילת הרשת, דרך כל השכבות, עד להפקת הניבוי[cite: 7].</td></tr>
+                    <tr><td>25</td><td><span class="term-en">Backpropagation</span></td><td>הפצה לאחור</td><td>אלגוריתם המחשב לאחור את תרומת כל משקל לשגיאה, מטרתו לשפר את המודל[cite: 7].</td></tr>
+                    <tr><td>26</td><td><span class="term-en">Gradient</span></td><td>גרדיאנט</td><td>הנגזרת (כיוון ועוצמת השיפוע) המורה למודל לאיזה כיוון לעדכן את המשקלים כדי להקטין שגיאה.</td></tr>
+                    <tr><td>27</td><td><span class="term-en">Gradient Descent</span></td><td>מורד הגרדיאנט</td><td>שיטת האופטימיזציה שמעדכנת בפועל את המשקלים צעד אחר צעד למציאת השגיאה המינימלית.</td></tr>
+                    <tr><td>28</td><td><span class="term-en">Learning Rate</span></td><td>קצב למידה</td><td>פרמטר הקובע את גודל הצעד שבו המודל מעדכן את המשקלים בכל פעם[cite: 7].</td></tr>
+                    <tr><td>29</td><td><span class="term-en">Epoch</span></td><td>מחזור אימון</td><td>מעבר שלם אחד של המודל על כל דגימות האימון (ה-Dataset)[cite: 7].</td></tr>
+                    <tr><td>30</td><td><span class="term-en">Batch</span></td><td>אצווה</td><td>קבוצה קטנה של דגימות המעובדת יחד לפני עדכון המשקלים (לייעול האימון)[cite: 7].</td></tr>
+                    <tr><td>31</td><td><span class="term-en">Accuracy</span></td><td>דיוק</td><td>מדד ביצועים: אחוז הניבויים הנכונים מתוך כלל הדגימות[cite: 7].</td></tr>
+                    <tr><td>32</td><td><span class="term-en">Overfitting</span></td><td>התאמת יתר</td><td>מצב שבו המודל "משנן" את נתוני האימון ולא מצליח לזהות דגימות חדשות[cite: 7].</td></tr>
+                    <tr><td>33</td><td><span class="term-en">Underfitting</span></td><td>חוסר התאמה</td><td>מצב שבו המודל פשוט מדי או לא אומן מספיק, ואינו מצליח להבין אפילו את נתוני האימון.</td></tr>
+                    <tr><td>34</td><td><span class="term-en">Dataset</span></td><td>מסד נתונים / דאטה-סט</td><td>אוסף התמונות והתיוגים (עיגול/ריבוע/משולש) שמהם המודל לומד.</td></tr>
+                    <tr><td>35</td><td><span class="term-en">Shuffle</span></td><td>ערבוב דגימות</td><td>פעולה בקוד המערבבת את הנתונים לפני כל Epoch כדי למנוע למידת סדר קבוע.</td></tr>
+                    
+                    <tr><td>36</td><td><span class="term-en">LocalStorage</span></td><td>אחסון מקומי בדפדפן</td><td>מנגנון ב-JavaScript השומר את משקלי המודל בדפדפן הלקוח כך שיישארו בין רענונים.</td></tr>
+                    <tr><td>37</td><td><span class="term-en">Canvas API</span></td><td>ממשק הציור</td><td>תגית ב-HTML ופונקציות ב-JS המאפשרות שרטוט אינטראקטיבי של הצורות לקלט המודל.</td></tr>
+                    <tr><td>38</td><td><span class="term-en">Downsampling</span></td><td>הקטנת דגימה</td><td>האלגוריתם שכתבנו הממיר את אזור הציור הגדול (280x280) למטריצה קטנה (28x28).</td></tr>
+                    <tr><td>39</td><td><span class="term-en">Normalization</span></td><td>נרמול</td><td>חלוקת ערכי הצבע (0-255) כך שיהיו בתחום בין 0 ל-1, כדי לשמור על יציבות מתמטית ברשת.</td></tr>
+                    <tr><td>40</td><td><span class="term-en">DOM (Document Object Model)</span></td><td>מודל אובייקט המסמך</td><td>המנגנון שמאפשר לקוד ה-JS שלנו לתקשר ולעדכן את האלמנטים השונים בדפי ה-HTML.</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
